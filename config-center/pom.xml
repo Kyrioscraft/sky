@@ -39,8 +39,7 @@
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
-			<version>1.4.6.RELEASE</version>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
 		<dependency>
@@ -78,6 +77,8 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.3</version>
 				<configuration>
+					<!--docker宿主机的ip，要为docker开通tcp访问才有效-->
+					<!--<dockerHost>http://localhost:2375</dockerHost>-->
 					<imageName>my-sky/${project.artifactId}</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
 					<resources>
